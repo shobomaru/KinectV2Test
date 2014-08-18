@@ -70,6 +70,13 @@ std::string fileGetContents( const char* path )
 
 struct Kinect
 {
+	enum
+	{
+		MAX_COLOR_FRAME_WIDTH = 1920,
+		MAX_COLOR_FRAME_HEIGHT = 1080,
+		MAX_COLOR_FRAME_BYTE_PER_PIXEL = 4
+	};
+
 	void init()
 	{
 		HRESULT hr;
@@ -104,7 +111,7 @@ struct Kinect
 	std::unique_ptr< IColorFrameSource, Deleter > colorSource_;
 	std::unique_ptr< IColorFrameReader, Deleter > colorReader_;
 
-	std::array< unsigned char, 1920 * 1080 * 4 > colorFrameConverted_;
+	std::array< unsigned char, (MAX_COLOR_FRAME_WIDTH * MAX_COLOR_FRAME_HEIGHT * MAX_COLOR_FRAME_BYTE_PER_PIXEL) > colorFrameConverted_;
 };
 
 struct D3D
