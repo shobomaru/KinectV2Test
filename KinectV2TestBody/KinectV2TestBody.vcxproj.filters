@@ -22,4 +22,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="def.ps.hlsl">
+      <Filter>シェーダ ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="def.vs.hlsl">
+      <Filter>シェーダ ファイル</Filter>
+    </FxCompile>
+  </ItemGroup>
 </Project>
